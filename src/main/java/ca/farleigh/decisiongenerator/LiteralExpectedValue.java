@@ -1,9 +1,7 @@
-package ca.farleigh.decisiongenerator.choice.value.impl;
+package ca.farleigh.decisiongenerator;
 
 import java.math.BigDecimal;
 import java.util.Optional;
-
-import ca.farleigh.decisiongenerator.choice.value.ExpectedValue;
 
 /**
  * Represents a literal value.  Calculate returns the value itself.
@@ -27,19 +25,30 @@ public class LiteralExpectedValue implements ExpectedValue {
     
 	private BigDecimal value;
 	
+	/**
+	 * Construct a zero valued literal value.
+	 */
 	public LiteralExpectedValue() {
 	    this(BigDecimal.ZERO);
 	}
 	
+	/**
+	 * Construct an expected value
+	 * @param value The numeric value 
+	 */
     public LiteralExpectedValue(BigDecimal value) {
         this.value = value;
     }
 	
+    /**
+     * Get the numeric value of this expected value.
+     * @return the expected value
+     */
 	public BigDecimal getValue() {
         return value;
     }
 
-    public void setValue(BigDecimal value) {
+    public final void setValue(BigDecimal value) {
         this.value = value;
     }
 

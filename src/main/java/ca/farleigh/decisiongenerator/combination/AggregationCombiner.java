@@ -1,11 +1,11 @@
-package ca.farleigh.decisiongenerator.choice.value.combination;
+package ca.farleigh.decisiongenerator.combination;
 
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Optional;
 
-import ca.farleigh.decisiongenerator.choice.value.ExpectedValue;
+import ca.farleigh.decisiongenerator.ExpectedValue;
 
 /**
  * Abstract class that provides interface and implements shared behavior for 
@@ -16,21 +16,35 @@ import ca.farleigh.decisiongenerator.choice.value.ExpectedValue;
  */
 public abstract class AggregationCombiner implements ExpectedValue {
 
-    private Collection<ExpectedValue> expectedValues;
+    private String operator;
+    private Collection<? extends ExpectedValue> expectedValues;
     
     public AggregationCombiner() {
-        this(Collections.emptyList());
+        this("");
     }
     
-    public AggregationCombiner(final Collection<ExpectedValue> expectedValues) {
+    public AggregationCombiner(final String name) {
+        this(name, Collections.emptyList());
+    }
+    
+    public AggregationCombiner(final String name, final Collection<? extends ExpectedValue> expectedValues) {
+        this.setOperator(name);
         this.setExpectedValues(expectedValues);
     }
     
-    public final void setExpectedValues(final Collection<ExpectedValue> expectedValues) {
+    public final void setOperator(final String name) {
+        this.operator = name;
+    }
+
+    public String getOperator() {
+        return this.operator;
+    }
+    
+    public final void setExpectedValues(final Collection<? extends ExpectedValue> expectedValues) {
         this.expectedValues = expectedValues;
     }
     
-    public Collection<ExpectedValue> getExpectedValues() {
+    public Collection<? extends ExpectedValue> getExpectedValues() {
         return this.expectedValues;
     }
     

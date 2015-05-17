@@ -1,9 +1,8 @@
-package ca.farleigh.decisiongenerator.solver;
+package ca.farleigh.decisiongenerator.decision;
 
 import java.util.Optional;
 
 import ca.farleigh.decisiongenerator.choice.*;
-import ca.farleigh.decisiongenerator.decision.Decision;
 
 /**
  * Represents the ability to configure how the decision is made.

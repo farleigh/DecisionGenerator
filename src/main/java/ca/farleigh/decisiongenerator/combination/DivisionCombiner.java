@@ -1,10 +1,10 @@
-package ca.farleigh.decisiongenerator.choice.value.combination;
+package ca.farleigh.decisiongenerator.combination;
 
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import ca.farleigh.decisiongenerator.choice.value.ExpectedValue;
-import ca.farleigh.decisiongenerator.choice.value.impl.LiteralExpectedValue;
+import ca.farleigh.decisiongenerator.ExpectedValue;
+import ca.farleigh.decisiongenerator.LiteralExpectedValue;
 
 /**
  * Combine two expected values by dividing one by the other
@@ -18,7 +18,7 @@ public class DivisionCombiner extends BinaryCombiner {
     }
 
     public DivisionCombiner(final ExpectedValue dividend, final ExpectedValue divisor) {
-        super(dividend, divisor);
+        super("/", dividend, divisor);
     }
 
     @Override

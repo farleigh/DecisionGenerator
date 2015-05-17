@@ -9,14 +9,14 @@ import java.util.Optional;
 
 import org.junit.Test;
 
+import ca.farleigh.decisiongenerator.ExpectedValue;
+import ca.farleigh.decisiongenerator.LiteralExpectedValue;
 import ca.farleigh.decisiongenerator.choice.Choice;
-import ca.farleigh.decisiongenerator.choice.value.ExpectedValue;
-import ca.farleigh.decisiongenerator.choice.value.combination.MultiplicationCombiner;
-import ca.farleigh.decisiongenerator.choice.value.combination.SummationCombiner;
-import ca.farleigh.decisiongenerator.choice.value.impl.LiteralExpectedValue;
+import ca.farleigh.decisiongenerator.combination.MultiplicationCombiner;
+import ca.farleigh.decisiongenerator.combination.SummationCombiner;
 import ca.farleigh.decisiongenerator.decision.Decision;
-import ca.farleigh.decisiongenerator.solver.DecisionStrategy;
-import ca.farleigh.decisiongenerator.solver.impl.MinimumChoiceStrategy;
+import ca.farleigh.decisiongenerator.decision.DecisionStrategy;
+import ca.farleigh.decisiongenerator.decision.solver.MinimumChoiceStrategy;
 
 public class SimpleDecisionTests {
 

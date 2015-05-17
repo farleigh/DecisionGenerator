@@ -1,4 +1,4 @@
-package ca.farleigh.decisiongenerator.choice.value;
+package ca.farleigh.decisiongenerator;
 
 import java.math.BigDecimal;
 import java.util.Optional;

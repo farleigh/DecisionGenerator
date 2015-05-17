@@ -1,4 +1,4 @@
-package ca.farleigh.decisiongenerator.solver.impl;
+package ca.farleigh.decisiongenerator.decision.solver;
 
 import java.math.BigDecimal;
 import java.util.Collection;
@@ -7,7 +7,7 @@ import java.util.Optional;
 
 import ca.farleigh.decisiongenerator.choice.Choice;
 import ca.farleigh.decisiongenerator.decision.Decision;
-import ca.farleigh.decisiongenerator.solver.DecisionStrategy;
+import ca.farleigh.decisiongenerator.decision.DecisionStrategy;
 
 /**
  * This strategy minimizes the cost? of the choices in the decision. 

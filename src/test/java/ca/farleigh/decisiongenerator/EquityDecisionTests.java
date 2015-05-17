@@ -6,14 +6,14 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import ca.farleigh.decisiongenerator.LiteralExpectedValue;
 import ca.farleigh.decisiongenerator.choice.Choice;
-import ca.farleigh.decisiongenerator.choice.value.combination.AdditionCombiner;
-import ca.farleigh.decisiongenerator.choice.value.combination.DivisionCombiner;
-import ca.farleigh.decisiongenerator.choice.value.combination.MultiplicationCombiner;
-import ca.farleigh.decisiongenerator.choice.value.combination.SubtractionCombiner;
-import ca.farleigh.decisiongenerator.choice.value.impl.LiteralExpectedValue;
+import ca.farleigh.decisiongenerator.combination.AdditionCombiner;
+import ca.farleigh.decisiongenerator.combination.DivisionCombiner;
+import ca.farleigh.decisiongenerator.combination.MultiplicationCombiner;
+import ca.farleigh.decisiongenerator.combination.SubtractionCombiner;
 import ca.farleigh.decisiongenerator.decision.Decision;
-import ca.farleigh.decisiongenerator.solver.impl.MaximumChoiceStrategy;
+import ca.farleigh.decisiongenerator.decision.solver.MaximumChoiceStrategy;
 
 /**
  * Tests around making decisions about equities.

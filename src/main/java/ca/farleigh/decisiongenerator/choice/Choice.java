@@ -3,8 +3,8 @@ package ca.farleigh.decisiongenerator.choice;
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import ca.farleigh.decisiongenerator.choice.value.ExpectedValue;
-import ca.farleigh.decisiongenerator.choice.value.impl.LiteralExpectedValue;
+import ca.farleigh.decisiongenerator.ExpectedValue;
+import ca.farleigh.decisiongenerator.LiteralExpectedValue;
 
 /**
  * A choice can have further expected values. An expected value can be modeled
@@ -57,7 +57,7 @@ public final class Choice implements ExpectedValue {
      * statement such as "Eat more toast" or it can be an identifier to can be
      * used to find the appropriate text for presentation of the results.
      * 
-     * @return
+     * @return The name (identifier) for the choice
      */
     public String getName() {
         return name;
@@ -104,8 +104,8 @@ public final class Choice implements ExpectedValue {
     }
 
     /**
-	 * Verify equality
-	 */
+     * Verify equality
+     */
     @Override
     public boolean equals(final Object obj) {
         if (this == obj)

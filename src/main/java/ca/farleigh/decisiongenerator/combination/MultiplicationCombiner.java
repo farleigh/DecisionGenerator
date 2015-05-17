@@ -1,10 +1,10 @@
-package ca.farleigh.decisiongenerator.choice.value.combination;
+package ca.farleigh.decisiongenerator.combination;
 
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import ca.farleigh.decisiongenerator.choice.value.ExpectedValue;
-import ca.farleigh.decisiongenerator.choice.value.impl.LiteralExpectedValue;
+import ca.farleigh.decisiongenerator.ExpectedValue;
+import ca.farleigh.decisiongenerator.LiteralExpectedValue;
 
 /**
  * Combine two expected values by multiplying them together
@@ -18,7 +18,7 @@ public class MultiplicationCombiner extends BinaryCombiner {
     }
 
     public MultiplicationCombiner(ExpectedValue multiplicand1, ExpectedValue multiplicand2) {
-        super(multiplicand1, multiplicand2);
+        super("*", multiplicand1, multiplicand2);
     }
 
     @Override

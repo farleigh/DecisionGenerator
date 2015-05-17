@@ -1,24 +1,36 @@
-package ca.farleigh.decisiongenerator.choice.value.combination;
+package ca.farleigh.decisiongenerator.combination;
 
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import ca.farleigh.decisiongenerator.choice.value.ExpectedValue;
+import ca.farleigh.decisiongenerator.ExpectedValue;
 
 /**
- * Abstract class that provides interface and shared behavior for binary operations.  Subclasses
- * are expected to override the combine method to provide combining behavior.
+ * Abstract class that provides interface and shared behavior for binary
+ * operations. Subclasses are expected to override the combine method to provide
+ * combining behavior.
+ * 
  * @author Clinton Farleigh
  *
  */
 public abstract class BinaryCombiner implements ExpectedValue {
 
+    private String operation;
     private ExpectedValue operand1;
     private ExpectedValue operand2;
 
-    public BinaryCombiner(final ExpectedValue operand1, final ExpectedValue operand2) {
+    public BinaryCombiner(final String operation, final ExpectedValue operand1, final ExpectedValue operand2) {
+        this.setOperation(operation);
         this.setOperand1(operand1);
         this.setOperand2(operand2);
+    }
+
+    public String getOperation() {
+        return operation;
+    }
+
+    public void setOperation(final String operation) {
+        this.operation = operation;
     }
 
     public ExpectedValue getOperand1() {
@@ -48,6 +60,7 @@ public abstract class BinaryCombiner implements ExpectedValue {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
+        result = prime * result + ((operation == null) ? 0 : operation.hashCode());        
         result = prime * result + ((operand1 == null) ? 0 : operand1.hashCode());
         result = prime * result + ((operand2 == null) ? 0 : operand2.hashCode());
         return result;
@@ -61,7 +74,16 @@ public abstract class BinaryCombiner implements ExpectedValue {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        BinaryCombiner other = (BinaryCombiner) obj;
+        return this.equals((BinaryCombiner) obj);
+    }
+
+    public boolean equals(final BinaryCombiner other) {
+        if (operation == null) {
+            if (other.operation == null)
+                return false;
+        } else if (!operation.equals(other.operation)) {
+            return false;
+        }
         if (operand1 == null) {
             if (other.operand1 != null)
                 return false;
@@ -74,7 +96,7 @@ public abstract class BinaryCombiner implements ExpectedValue {
             return false;
         return true;
     }
-    
+
     @Override
     public String toString() {
         return this.calculate().orElse(BigDecimal.ZERO).toString();
